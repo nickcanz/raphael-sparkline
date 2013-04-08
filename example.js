@@ -10,5 +10,11 @@ var Examples = (function () {
 
     paper.sparkline(data);
   };
+  
+  self.init2 = function() {
+    var paper = Raphael.fromJquery($('#example2'));
+
+    paper.sparkline([50,50,50]);
+  };
   return self;
 }());
