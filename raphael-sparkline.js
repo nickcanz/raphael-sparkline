@@ -24,7 +24,9 @@ Raphael.fn.sparkline = function (data) {
   var to_coords = function(value, idx) {
     var step = (graph_width / (data.length-1));
     return {
-      y:  -((value-min)/(max-min) * graph_height) + graph_height + graph_opts.padding.top,
+      y:  max-min !== 0 ?
+        -((value-min)/(max-min) * graph_height) + graph_height + graph_opts.padding.top :
+        graph_height/2 + graph_opts.padding.top,
       x: padding + idx*step
     };
   };
